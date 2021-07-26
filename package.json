@@ -1,0 +1,19 @@
+{
+  "name": "tradingview-api-for-single-data",
+  "version": "1.0.0",
+  "description": "This is a tradingview oair data api for client project",
+  "main": "index.js",
+  "scripts": {
+    "server": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "npm": "^7.20.1",
+    "tradingview-scraper": "^0.3.0"
+  }
+}
