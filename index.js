@@ -22,23 +22,27 @@ const endpoint = '/';
 
 
 //server code
-app.get(endpoint, async(req, res) => {
+app.get(endpoint, async (req, res) => {
 
-    //get data
-    let data = await tv.getTicker(tinker);
+  let data = await tv.getTicker(tinker);
 
-    //format data
-    let price = data.lp;
-    price = price.toFixed(digitsToDiaplay);
-    price = price.toString();
-    price = price.substring(0,digitsToDiaplay);
+  //format data
+  let price = data.lp;
+  price = price.toFixed(digitsToDiaplay);
+  price = price.toString();
+  price = price.substring(0, digitsToDiaplay);
+
+  //json response send
+  res.json({
+    number: price
+  });
+});
 
 
-    //json response send
-    res.json({
-        number: price
-    });
-})
+//error handling
+process.on('uncaughtException', function (err) {
+  console.log(`Error: ${err}`);
+});
 
 
 //server starts
